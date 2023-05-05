@@ -24,10 +24,10 @@
     ],
     "assets": {
       "data": {
-        "title": "dota_1.5_trainingdata_1228.tdml.json",
+        "title": "dota_1.5_trainingdata_1228.tdmljson",
         "type": "application/json",
-        "href": "http://oge.whu.edu.cn/dataset/dota-v1.5/dota_1.5_trainingdata_1228.tdml.json"
-      },
+        "href": "http://oge.whu.edu.cn/dataset/dota-v1.5/dota_1.5_trainingdata_1228.tdmljson"
+      }
       
     }
   }

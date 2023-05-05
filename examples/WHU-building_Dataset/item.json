@@ -59,7 +59,7 @@
     "data": {
       "title": "whu_building_img_trainingData_TDML",
       "type": "application/json",
-      "href": "http://oge.whu.edu.cn/dataset/whu-building/whu_building_img_trainingData_TDML.tdml.json"
+      "href": "http://oge.whu.edu.cn/dataset/whu-building/whu_building_img_trainingData_TDML.tdmljson"
       
     }
   }

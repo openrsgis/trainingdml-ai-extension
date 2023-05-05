@@ -21,9 +21,10 @@ This document explains the fields of The Training Data Markup Language for Artif
 
 - Examples:
   - Dota-v1.5 Dataset:
-    -  [Item example-Dota-v1.5 Dataset](examples/DOTA-1.5_Dataset/whu_buildings_trainingdata_0000.json): Shows the basic usage of the extension in a STAC Item
+    -  [Item example-Dota-v1.5 Dataset](examples/DOTA-1.5_Dataset/dota_1.5_trainingdata_0000.json): Shows the basic usage of the extension in a STAC Item
+    -  [Item example-Dota-v1.5 Dataset](examples/DOTA-1.5_Dataset/dota_1.5_trainingdata_1228.json): Shows the basic usage of the extension in a STAC Item
     -  [Collection example-Dota-v1.5 Dataset](examples/DOTA-1.5_Dataset/collection.json): Shows the basic usage of the extension in a STAC Collection
-  
+    
   - WHU building Dataset:
     -  [Item example-WHU building Dataset](examples/WHU-building_Dataset/item.json): Shows the basic usage of the extension in a STAC Item
     -  [Collection example-WHU building Dataset](examples/WHU-building_Dataset/collection.json): Shows the basic usage of the extension in a STAC Collection
@@ -44,12 +45,12 @@ The fields in the table below can be used in these parts of STAC documents:
 | -------------------- | ------------------------- | ----------- |
 | trainingdml-ai:amount_of_training_data | number              | **Required**, Total  number of training samples in the AI training dataset. |
 | trainingdml-ai:classification_schema | string | Classification schema for classes used in the AI  training dataset. |
-| trainingdml-ai:metrics_in_LIT       | MetricsInLIT Object | Results of performance metrics achieved by AI/ML algorithms in the peer-reviewed  literature. |
+| trainingdml-ai:metrics_in_LIT       | [MetricsInLIT Object](#metricsInLIT Object) | Results of performance metrics achieved by AI/ML algorithms in the peer-reviewed  literature. |
 | trainingdml-ai:image_sizes         | [String]            | Size of the images used in the EO training dataset.          |
-| trainingdml-ai:scope | Scope Object | Description  of the scope of the training dataset. |
-| trainingdml-ai:quality              | Quality Object      | Quality description of training datasets.                    |
+| trainingdml-ai:scope | [Scope Object](#Scope Object) | Description  of the scope of the training dataset. |
+| trainingdml-ai:quality              | [Quality Object](#Quality Object) | Quality description of training datasets.                    |
 | trainingdml-ai:data_sources         | [string]            | Citation of data sources.                                    |
-| trainingdml-ai:changeset            | Changeset Object    | Changed  training samples between two versions in the collection level. |
+| trainingdml-ai:changeset            | [][Link Object][[Link Object](https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md#link-object)] | Changed  training samples between two versions in the collection level. |
 
 In addition, fields from the following extensions must be imported in the item:
 
@@ -94,7 +95,7 @@ changed  training samples between two versions in the collection level. ChangeSe
 
 There are three types of updates for sample data units: "add" for adding new sample data units, "modify" for modifying existing sample data units, and "delete" for removing sample data units. "Modify" includes changes to metadata of sample data, changes to original data used in sample data, and additions, modifications, and deletions of all labeled objects in the sample data.
 
-### metricsInLIT 
+### metricsInLIT Object
 
 This is the introduction for the purpose and the content of the metricsInLIT Object used in field: trainingdml-ai:metricsInLIT.
 
@@ -104,16 +105,23 @@ This is the introduction for the purpose and the content of the metricsInLIT Obj
 | algorithm  | string                                        | AI/ML algorithms used in the peer-reviewed literature.       |
 | metrics    | [Map<string,  string\|number\|Boolean\|null>] | **REQUIRED**. Metrics and results of AI/ML algorithms in the peer-reviewed literature. |
 
-### quality
+### Quality Object
 
 This is the introduction for the purpose and the content of the Quality Object used in filed: trainingdml-ai:quality.
 
-| Field Name | Type             | Description                                                  |
-| ---------- | ---------------- | ------------------------------------------------------------ |
-| scope      | Scope Object     | **REQUIRED**. the scope of quality information is specified. |
-| report     | [qualityElement] | Quality reports about the training dataset.                  |
+| Field Name | Type                                              | Description                                                  |
+| ---------- | ------------------------------------------------- | ------------------------------------------------------------ |
+| scope      | [[Scope Object](#Scope Object)]                   | **REQUIRED**. the scope of quality information is specified. |
+| report     | [[qualityElement Object](#QualityElement Object)] | Quality reports about the training dataset.                  |
 
-### qualityElement
+### Scope Object
+
+| Field Name        | Type   | Description                                                  |
+| ----------------- | ------ | ------------------------------------------------------------ |
+| level             | string | **REQUIRED**. The applicable level of data.                  |
+| level_description | object | **REQUIRED**. A more detailed description of the level to better understand the scope of application of the data. |
+
+### QualityElement Object
 
 This is the introduction for the purpose and the content of the qualityElement. Elements related to quality, or more specifically, bias that can be used to reduce the errors when using AI/ML. For example, any knowledge of the TD imbalance and mislabeling can be stored in TD quality.
 
@@ -123,20 +131,6 @@ This is the introduction for the purpose and the content of the qualityElement. 
 | measure           | string | **REQUIRED**. Reference to measure used.              |
 | evaluation_method | string | **REQUIRED**. Evaluation information.                 |
 | result            | string | Value obtained from applying a data quality measure.. |
-
-### changeset 
-
-This is the introduction for the purpose and the content of the Changeset Object used in filed: trainingdml-ai:changeset. changeset Object records changed training samples between two versions in the collection level, including added training samples, modified training samples and deleted training samples.
-
-| Field Name   | Type                                                         | Description                                                  |
-| ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| id           | string                                                       | **REQUIRED**. Identifier of the changeset.                   |
-| change_count | number                                                       | **REQUIRED**. Total number of changed training samples.      |
-| version      | string                                                       | Version of the training dataset that the changeset belongs to. |
-| createdTime  | date                                                         | Created time of the changeset.                               |
-| add          | [[linkObject](https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md#link-object)] | Added training samples.                                      |
-| modify       | [[linkObject](https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md#link-object)] | Modified training samples.                                   |
-| delete       | [[linkObject](https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md#link-object)] | Deleted training samples.                                    |
 
 ## Best Practices
 

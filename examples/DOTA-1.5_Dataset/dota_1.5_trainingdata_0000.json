@@ -26,8 +26,8 @@
       "data": {
         "title": "dota_1.5_trainingdata_0000.tdml.json",
         "type": "application/json",
-        "href": "http://oge.whu.edu.cn/dataset/dota-v1.5/dota_1.5_trainingdata_0000.tdml.json"
-      },
+        "href": "http://oge.whu.edu.cn/dataset/dota-v1.5/dota_1.5_trainingdata_0000.tdmljson"
+      }
 
     }
   }
