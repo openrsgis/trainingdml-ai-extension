@@ -45,10 +45,10 @@ The fields in the table below can be used in these parts of STAC documents:
 | -------------------- | ------------------------- | ----------- |
 | trainingdml-ai:amount_of_training_data | number              | **Required**, Total  number of training samples in the AI training dataset. |
 | trainingdml-ai:classification_schema | string | Classification schema for classes used in the AI  training dataset. |
-| trainingdml-ai:metrics_in_LIT       | [MetricsInLIT Object](#metricsInLIT Object) | Results of performance metrics achieved by AI/ML algorithms in the peer-reviewed  literature. |
+| trainingdml-ai:metrics_in_LIT       | [MetricsInLIT Object](https://github.com/TrainingDML/trainingdml-ai-extension/tree/main#metricsInLIT Object) | Results of performance metrics achieved by AI/ML algorithms in the peer-reviewed  literature. |
 | trainingdml-ai:image_sizes         | [String]            | Size of the images used in the EO training dataset.          |
-| trainingdml-ai:scope | [Scope Object](#Scope Object) | Description  of the scope of the training dataset. |
-| trainingdml-ai:quality              | [Quality Object](#Quality Object) | Quality description of training datasets.                    |
+| trainingdml-ai:scope | [Scope Object](https://github.com/TrainingDML/trainingdml-ai-extension/tree/main#Scope Object) | Description  of the scope of the training dataset. |
+| trainingdml-ai:quality              | [Quality Object](https://github.com/TrainingDML/trainingdml-ai-extension/tree/main#Quality Object) | Quality description of training datasets.                    |
 | trainingdml-ai:data_sources         | [string]            | Citation of data sources.                                    |
 | trainingdml-ai:changeset            | [][Link Object][[Link Object](https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md#link-object)] | Changed  training samples between two versions in the collection level. |
 
@@ -95,7 +95,7 @@ changed  training samples between two versions in the collection level. ChangeSe
 
 There are three types of updates for sample data units: "add" for adding new sample data units, "modify" for modifying existing sample data units, and "delete" for removing sample data units. "Modify" includes changes to metadata of sample data, changes to original data used in sample data, and additions, modifications, and deletions of all labeled objects in the sample data.
 
-### metricsInLIT Object
+### MetricsInLIT Object
 
 This is the introduction for the purpose and the content of the metricsInLIT Object used in field: trainingdml-ai:metricsInLIT.
 
@@ -109,10 +109,10 @@ This is the introduction for the purpose and the content of the metricsInLIT Obj
 
 This is the introduction for the purpose and the content of the Quality Object used in filed: trainingdml-ai:quality.
 
-| Field Name | Type                                              | Description                                                  |
-| ---------- | ------------------------------------------------- | ------------------------------------------------------------ |
-| scope      | [[Scope Object](#Scope Object)]                   | **REQUIRED**. the scope of quality information is specified. |
-| report     | [[qualityElement Object](#QualityElement Object)] | Quality reports about the training dataset.                  |
+| Field Name | Type                                                         | Description                                                  |
+| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| scope      | [[Scope Object](https://github.com/TrainingDML/trainingdml-ai-extension/tree/main#Scope Object)] | **REQUIRED**. the scope of quality information is specified. |
+| report     | [[qualityElement Object](https://github.com/TrainingDML/trainingdml-ai-extension/tree/main#QualityElement Object)] | Quality reports about the training dataset.                  |
 
 ### Scope Object
 
