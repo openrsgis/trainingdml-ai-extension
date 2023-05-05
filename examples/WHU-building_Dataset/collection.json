@@ -1,0 +1,127 @@
+{
+  "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/trainingdml-ai/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/label/v1.0.1/schema.json",
+    "https://stac-extensions.github.io/eo/v1.1.0/schema.json"
+  ],
+
+  "type": "Collection",
+  "id": "whu-building",
+  "title": "WHU-Building Dataset-Building Change Detection Dataset",
+  "description": "This dataset covers an area where a 6.3-magnitude earthquake has occurred in February 2011 and rebuilt in the following years. This dataset consists of aerial images obtained in April 2012 that contains 12796 buildings in 20.5 km2 (16077 buildings in the same area in 2016 dataset).",
+  "license": "CC BY-SA 4.0",
+  "keywords":["rebuilt buildings", "aerial images"],
+  "providers":[
+    {
+      "name": "Wuhan University",
+      "roles": ["licensor", "producer"],
+      "url": "http://gpcv.whu.edu.cn/data/"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          1560160,
+          5176338.4,
+          1566661.4,
+          5179409.2
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2011-02-01T00:00:00Z",
+          "2016-01-01T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "properties":{
+    "version": "1.0",
+    "label:tasks":"Change Detection",
+    "label:classes":[
+      {
+      "name": "building",
+      "classes": 1
+      }
+    ],
+    "eo:bands":[
+      {
+        "name": "band1",
+        "common_name": "red"
+      },
+      {
+        "name": "band2",
+        "common_name": "green"
+      },
+      {
+        "name": "band3",
+        "common_name": "blue"
+      }
+    ],
+    "trainingdml-ai:amount_of_training_data": 1,
+    "trainingdml-ai:image_size":"32508*15354",
+    "trainingdml-ai:data_sources": [
+      "quickbird",
+      "wordlview series",
+      "ikonos",
+      "zy-3"
+
+    ],
+    "trainingdml-ai:quality": {
+      "type": "DataQuality",
+      "scope": {
+        "level": "dataset",
+        "levelDescription": {
+          "dataset": "whu_building"
+        }
+      },
+      "report": [
+        {
+          "type": "FormatConsistency",
+          "measure": "Percentage of training samples with inconsistent image format",
+          "evaluationMethod": "Full test method to calculate the percentage of training samples with inconsistent format",
+          "result": "0"
+        },
+        {
+          "type": "CompletenessOmission",
+          "measure": "Percentage of missing scene labels",
+          "evaluationMethod": "Full test method to calculate the percentage of training samples with missing labels",
+          "result": "0"
+        },
+        {
+          "type": "ThematicClassificationCorrectness",
+          "measure": "Percentage of error scene labels",
+          "evaluationMethod": "Full test method to calculate the percentage of training samples with incorrect scene labels",
+          "result": "0"
+        }
+      ]
+
+    }
+
+  },
+  "summaries": {
+    "datetime": {
+      "minimum": "2011-02-01T00:00:00Z",
+      "maximum": "2016-01-01T00:00:00Z"
+    }
+  },
+  "links": [
+    {
+      "href": "./collection.json",
+      "rel": "self",
+	  "type": "application/json",
+      "rel": "collection"
+    },
+    {
+      "href": "./item.json",
+      "title": "whu_buildings_training_data_0001",
+      "type": "application/json",
+      "rel": "item"
+    }
+  ]
+}

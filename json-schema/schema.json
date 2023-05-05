@@ -1,0 +1,362 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://stac-extensions.github.io/template/v1.0.0/schema.json#",
+  "title": "Template Extension",
+  "description": "STAC Template Extension for STAC Items and STAC Collections.",
+  "oneOf": [
+    {
+      "$comment": "This is the schema for STAC Items. Remove this object if this extension only applies to Collections.",
+      "allOf": [
+        {
+          "$ref": "#/definitions/stac_extensions"
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "properties",
+            "assets"
+          ],
+          "properties": {
+            "type": {
+              "const": "Feature"
+            },
+            "properties": {
+              "allOf": [
+                {
+                  "$comment": "Require fields here for Item Properties.",
+                  "required": [
+                    
+                  ]
+                },
+                {
+                  "$ref": "#/definitions/fields"
+                }
+              ]
+            },
+            "assets": {
+              "$comment": "This validates the fields in Item Assets, but does not require them.",
+              "type": "object",
+              "additionalProperties": {
+                "$ref": "#/definitions/fields"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "$comment": "This is the schema for STAC Collections.",
+      "type": "object",
+      "allOf": [
+        {
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "const": "Collection"
+            }
+          }
+        },
+        {
+          "$ref": "#/definitions/stac_extensions"
+        }
+      ],
+      "anyOf": [
+        {
+          "$comment": "This is the schema for the top-level fields in a Collection. Remove this if this extension does not define top-level fields for Collections.",
+          "allOf": [
+            {
+              "$comment": "Require fields here for Collections (top-level).",
+              "required": [
+                "id",
+                "title",
+                "description",
+                "license",
+                "version",
+                "extent",
+                "properties",
+                "links"
+              ]
+            },
+            {
+              "$ref": "#/definitions/fields"
+            }
+          ]
+        },
+        {
+          "$comment": "This validates the fields in Collection Assets, but does not require them.",
+          "required": [
+            "assets"
+          ],
+          "properties": {
+            "assets": {
+              "type": "object",
+              "not": {
+                "additionalProperties": {
+                  "not": {
+                    "allOf": [
+                      {
+                        "$ref": "#/definitions/require_any_field"
+                      },
+                      {
+                        "$ref": "#/definitions/fields"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "$comment": "This is the schema for the fields in Item Asset Definitions. It doesn't require any fields.",
+          "required": [
+            "item_assets"
+          ],
+          "properties": {
+            "item_assets": {
+              "type": "object",
+              "not": {
+                "additionalProperties": {
+                  "not": {
+                    "allOf": [
+                      {
+                        "$ref": "#/definitions/require_any_field"
+                      },
+                      {
+                        "$ref": "#/definitions/fields"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "$comment": "This is the schema for the fields in Summaries. By default, only checks the existence of the properties, but not the schema of the summaries.",
+          "required": [
+            "summaries"
+          ],
+          "properties": {
+            "summaries": {
+              "$ref": "#/definitions/require_any_field"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "definitions": {
+    "stac_extensions": {
+      "type": "object",
+      "required": [
+        "stac_extensions"
+      ],
+      "properties": {
+        "stac_extensions": {
+          "type": "array",
+          "contains": {
+            "const": "https://stac-extensions.github.io/template/v1.0.0/schema.json"
+          }
+        }
+      }
+    },
+    "require_any_field": {
+      "$comment": "Please list all fields here so that we can force the existence of one of them in other parts of the schemas.",
+      "anyOf": [
+        {"required": ["trainingdml-ai:amount_of_training_data"]}
+      ]
+    },
+    "fields": {
+      "$comment": "Add your new fields here. Don't require them here, do that above in the corresponding schema.",
+      "type": "object",
+      "properties": {
+
+        "trainingdml-ai:amount_of_training_data": {
+            "type": "integer",
+            "default": 0,
+            "title": "The trainingdml-ai:amount_of_training_data Schema",
+            "examples": [
+                1
+            ]
+        },
+		"trainingdml-ai:classification_schema": {
+            "type": "string",
+            "default": "",
+            "title": "The trainingdml-ai:classification_schema Schema"
+        },
+		"trainingdml-ai:image_size": {
+            "type": "string",
+            "default": "",
+            "title": "The trainingdml-ai:image_size Schema"
+        },
+		"trainingdml-ai:scope": {
+            "$ref": "#/definitions/scope"
+        },
+		
+        "trainingdml-ai:data_sources": {
+            "type": "array",
+            "default": [],
+            "title": "The trainingdml-ai:data_sources Schema",
+            "items": {}
+        },
+        "trainingdml-ai:metrics_in_LIT": {
+            "type": "array",
+            "default": [],
+            "title": "The trainingdml-ai:metrics_in_LIT Schema",
+            "items": {
+              "$ref": "#/definitions/metricsInLiterature"
+            }
+        },
+        "trainingdml-ai:quality": {
+            "type": "object",
+            "default": {},
+            "title": "The trainingdml-ai:quality Schema",
+            "required": [
+                "type",
+                "scope",
+                "report"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "default": ""
+                    
+                },
+                "scope": {
+                    
+                    "$ref": "#/definitions/scope"
+                },
+                "report": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/qualityElement"
+                    }
+          
+      
+                   
+                }
+            }
+        },
+        "trainingdml-ai:changeset": {
+			"type": "array",
+			"items": {
+			  "$ref": "https://github.com/radiantearth/stac-spec/blob/master/item-spec/json-schema/item.json#/definitions/link"       
+        },
+        "metricsInLiterature": {
+          "title": "MetricsInLiterature",
+          "type": "object",
+          "required": [
+            "doi",
+            "algroithm",
+            "metrics"
+          ],
+          "properties": {
+            "doi": {
+              "type": "string"
+            },
+            "algorithm": {
+              "type": "string"
+            },
+            "metrics": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "value"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "number"
+                  }
+                }
+              },
+              "minItems": 1
+            }
+          }
+        },
+        "qualityElement": {
+          "title": "QualityElement",
+          "type": "object",
+          "required": [
+            "type",
+            "measure",
+            "evaluationMethod",
+            "result"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "QualityElement"
+              ]
+            },
+            "measure": {
+              "type": "string"
+            },
+            "evaluationMethod": {
+              "type": "string"
+            },
+            "result": {
+              "type": "string"
+            }
+          }
+        },
+        "scope": {
+          "title": "Scope",
+          "type": "object",
+          "required": [
+            "level",
+            "levelDescription"
+          ],
+          "properties": {
+            "level": {
+              "type": "string"
+            },
+            "extent": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 4
+            },
+            "levelDescription": {
+              "type": "object",
+              "required": [
+                "dataset"
+              ],
+              "properties": {
+                "dataset": {
+                  "type": "string"
+                },
+                "features": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+    },
+      "patternProperties": {
+        "^(?!template:)": {
+          "$comment": "Above, change trainingdml-ai to the prefix of this extension"
+        }
+      },
+      "additionalProperties": false
+    }
+    
+
+
+
+  }
+}
