@@ -1,66 +1,64 @@
 {
-  "stac_version": "1.0.0",
-  "stac_extensions": [
-    "https://stac-extensions.github.io/trainingdml-ai/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/ml-aoi/v1.0.1/schema.json"
-  ],
-  "type": "Feature",
-  "id": "whu_buildings_training_data_0001",
-  "bbox": [
-    1560160,
-    5176338.4,
-    1566661.4,
-    5179409.2
-
-  ],
-  "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-      [
-        [
-          1560160,
-          5176338.4
-        ],
-        [
-          1560160,
-          5179409.2
-        ],
-        [
-          1566661.4,
-          5176338.4
-        ],
-        [
-          1566661.4,
-          5179409.2
-        ],
-        [
-          1560160,
-          5176338.4
+    "stac_version": "1.0.0",
+    "stac_extensions": [
+        "https://stac-extensions.github.io/trainingdml-ai/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/ml-aoi/v1.0.1/schema.json"
+    ],
+    "type": "Feature",
+    "id": "whu_buildings_training_data_0001",
+    "bbox": [
+        1560160,
+        5176338.4,
+        1566661.4,
+        5179409.2
+    ],
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    1560160,
+                    5176338.4
+                ],
+                [
+                    1560160,
+                    5179409.2
+                ],
+                [
+                    1566661.4,
+                    5176338.4
+                ],
+                [
+                    1566661.4,
+                    5179409.2
+                ],
+                [
+                    1560160,
+                    5176338.4
+                ]
+            ]
         ]
-      ]
-    ]
-  },
-  "properties": {
-    "start_datetime": "2012-01-01T00:00:00.000Z",
-    "end_datatime": "2016-01-01T00:00:00.000Z",
-    "ml-aoi:split": "train",
-  },
-  "links": [
-    {
-      "href": "item.json",
-      "rel": "self"
     },
-    {
-      "rel":"collection",
-      "href": "./collection.json"
+    "properties": {
+        "start_datetime": "2012-01-01T00:00:00.000Z",
+        "end_datatime": "2016-01-01T00:00:00.000Z",
+        "ml-aoi:split": "train"
+    },
+    "links": [
+        {
+            "href": "item.json",
+            "rel": "self"
+        },
+        {
+            "rel": "collection",
+            "href": "./collection.json"
+        }
+    ],
+    "assets": {
+        "data": {
+            "title": "whu_building_img_trainingData_TDML",
+            "type": "application/json",
+            "href": "http://oge.whu.edu.cn/dataset/whu-building/whu_building_img_trainingData_TDML.tdmljson"
+        }
     }
-  ],
-  "assets": {
-    "data": {
-      "title": "whu_building_img_trainingData_TDML",
-      "type": "application/json",
-      "href": "http://oge.whu.edu.cn/dataset/whu-building/whu_building_img_trainingData_TDML.tdmljson"
-      
-    }
-  }
 }

@@ -1,258 +1,262 @@
 {
     "stac_version": "1.0.0",
     "stac_extensions": [
-      "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
-      "https://stac-extensions.github.io/trainingdml-ai/v1.0.0/schema.json",
-      "https://stac-extensions.github.io/label/v1.0.1/schema.json",
-      "https://stac-extensions.github.io/eo/v1.1.0/schema.json"
+        "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/trainingdml-ai/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/label/v1.0.1/schema.json",
+        "https://stac-extensions.github.io/eo/v1.1.0/schema.json"
     ],
-  
     "type": "Collection",
     "id": "dota_v1.5 dataset",
     "title": "DOTA v1.5 Dataset",
     "description": "Dataset for Object detection in Aerial images-version 1.5 (DOTA-v1.5)",
     "license": "CC BY-SA 4.0",
-    "keywords":["object detection", "aerial images"],
-    "providers":[
-      {
-        "name": "Wuhan University",
-        "roles": ["licensor", "producer"],
-        "url": "http://captain-whu.github.io/DOTA/index.html"
-      }
+    "keywords": [
+        "object detection",
+        "aerial images"
+    ],
+    "providers": [
+        {
+            "name": "Wuhan University",
+            "roles": [
+                "licensor",
+                "producer"
+            ],
+            "url": "http://captain-whu.github.io/DOTA/index.html"
+        }
     ],
     "extent": {
-      "spatial": {
-        "bbox":[[-180.0, -90.0, 180.0, 90.0]]
-      },
-      "temporal": {
-        "interval": [
-          [
-            "2011-02-01T00:00:00Z",
-            null
-          ]
-        ]
-      }
-    },
-    "properties":{
-      "version": "1.5",
-      "created_time": "2011-02-01T00:00:00Z",
-      
-      "label:tasks":"Object Detection",
-      "label:classes":[
-        {
-            "name": "small-vehicle",
-            "classes": 1
+        "spatial": {
+            "bbox": [
+                [
+                    -180.0,
+                    -90.0,
+                    180.0,
+                    90.0
+                ]
+            ]
         },
-        {
-            "name": "large-vehicle",
-            "classes": 2
-        },
-        {
-            "name": "plane",
-            "classes": 3
-        },
-        {
-            "name": "storage-tank",
-            "classes": 4
-        },
-        {
-            "name": "ship",
-            "classes": 5
-        },
-        {
-            "name": "harbor",
-            "classes": 6
-        },
-        {
-            "name": "ground-track-field",
-            "classes": 7
-        },
-        {
-            "name": "soccer-ball-field",
-            "classes": 8
-        },
-        {
-            "name": "tennis-court",
-            "classes": 9
-        },
-        {
-            "name": "swimming-pool",
-            "classes": 10
-        },
-        {
-            "name": "baseball-diamond",
-            "classes": 11
-        },
-        {
-            "name": "roundabout",
-            "classes": 12
-        },
-        {
-            "name": "basketball-court",
-            "classes": 13
-        },
-        {
-            "name": "bridge",
-            "classes": 14
-        },
-        {
-            "name": "helicopter",
-            "classes": 15
-        },
-        {
-            "name": "container-crane",
-            "classes": 16
+        "temporal": {
+            "interval": [
+                [
+                    "2011-02-01T00:00:00Z",
+                    null
+                ]
+            ]
         }
-      ],
-      "label:overviews":{
-        "counts": [
+    },
+    "properties": {
+        "version": "1.5",
+        "created_time": "2011-02-01T00:00:00Z",
+        "label:tasks": "Object Detection",
+        "label:classes": [
             {
-                "name": "harbor",
-                "count": 8118
-            },
-            {
-                "name": "bridge",
-                "count": 2541
-            },
-            {
-                "name": "plane",
-                "count": 10622
-            },
-            {
-                "name": "helicopter",
-                "count": 713
-            },
-            {
-                "name": "storage-tank",
-                "count": 8286
-            },
-            {
-                "name": "swimming-pool",
-                "count": 2757
-            },
-            {
-                "name": "tennis-court",
-                "count": 3188
-            },
-            {
-                "name": "basketball-court",
-                "count": 672
-            },
-            {
-                "name": "roundabout",
-                "count": 622
-            },
-            {
-                "name": "ground-track-field",
-                "count": 476
+                "name": "small-vehicle",
+                "classes": 1
             },
             {
                 "name": "large-vehicle",
-                "count": 27357
+                "classes": 2
             },
             {
-                "name": "baseball-diamond",
-                "count": 625
+                "name": "plane",
+                "classes": 3
             },
             {
-                "name": "small-vehicle",
-                "count": 169838
-            },
-            {
-                "name": "soccer-ball-field",
-                "count": 487
+                "name": "storage-tank",
+                "classes": 4
             },
             {
                 "name": "ship",
-                "count": 43738
+                "classes": 5
+            },
+            {
+                "name": "harbor",
+                "classes": 6
+            },
+            {
+                "name": "ground-track-field",
+                "classes": 7
+            },
+            {
+                "name": "soccer-ball-field",
+                "classes": 8
+            },
+            {
+                "name": "tennis-court",
+                "classes": 9
+            },
+            {
+                "name": "swimming-pool",
+                "classes": 10
+            },
+            {
+                "name": "baseball-diamond",
+                "classes": 11
+            },
+            {
+                "name": "roundabout",
+                "classes": 12
+            },
+            {
+                "name": "basketball-court",
+                "classes": 13
+            },
+            {
+                "name": "bridge",
+                "classes": 14
+            },
+            {
+                "name": "helicopter",
+                "classes": 15
             },
             {
                 "name": "container-crane",
-                "count": 156
+                "classes": 16
             }
-
+        ],
+        "label:overviews": {
+            "counts": [
+                {
+                    "name": "harbor",
+                    "count": 8118
+                },
+                {
+                    "name": "bridge",
+                    "count": 2541
+                },
+                {
+                    "name": "plane",
+                    "count": 10622
+                },
+                {
+                    "name": "helicopter",
+                    "count": 713
+                },
+                {
+                    "name": "storage-tank",
+                    "count": 8286
+                },
+                {
+                    "name": "swimming-pool",
+                    "count": 2757
+                },
+                {
+                    "name": "tennis-court",
+                    "count": 3188
+                },
+                {
+                    "name": "basketball-court",
+                    "count": 672
+                },
+                {
+                    "name": "roundabout",
+                    "count": 622
+                },
+                {
+                    "name": "ground-track-field",
+                    "count": 476
+                },
+                {
+                    "name": "large-vehicle",
+                    "count": 27357
+                },
+                {
+                    "name": "baseball-diamond",
+                    "count": 625
+                },
+                {
+                    "name": "small-vehicle",
+                    "count": 169838
+                },
+                {
+                    "name": "soccer-ball-field",
+                    "count": 487
+                },
+                {
+                    "name": "ship",
+                    "count": 43738
+                },
+                {
+                    "name": "container-crane",
+                    "count": 156
+                }
+            ]
+        },
+        "eo:bands": [
+            {
+                "name": "band1",
+                "common_name": "red"
+            },
+            {
+                "name": "band2",
+                "common_name": "green"
+            },
+            {
+                "name": "band3",
+                "common_name": "blue"
+            }
+        ],
+        "trainingdml-ai:amount_of_training_data": 1869,
+        "trainingdml-ai:image_size": "800*800~4000*4000",
+        "trainingdml-ai:data_sources": [
+            "gf-2",
+            "jinlin-1"
+        ],
+        "trainingdml-ai:quality": {
+            "type": "DataQuality",
+            "scope": {
+                "level": "dataset",
+                "levelDescription": {
+                    "dataset": "DOTA-v1.5"
+                }
+            },
+            "report": [
+                {
+                    "type": "FormatConsistency",
+                    "measure": "Percentage of training samples with inconsistent image format",
+                    "evaluationMethod": "Full test method to calculate the percentage of training samples with inconsistent format",
+                    "result": "0"
+                },
+                {
+                    "type": "CompletenessOmission",
+                    "measure": "Percentage of missing scene labels",
+                    "evaluationMethod": "Full test method to calculate the percentage of training samples with missing labels",
+                    "result": "0"
+                },
+                {
+                    "type": "ThematicClassificationCorrectness",
+                    "measure": "Percentage of error scene labels",
+                    "evaluationMethod": "Full test method to calculate the percentage of training samples with incorrect scene labels",
+                    "result": "0"
+                }
+            ]
+        },
+        "trainingdml-ai:changeset": [
+            {
+                "href": "http://oge.whu.edu.cn/dataset/dota_1.5_changeset.tdmljson",
+                "rel": "version-history",
+                "type": "application/json"
+            }
         ]
-  
-      },
-      
-      "eo:bands":[
-        {
-          "name": "band1",
-          "common_name": "red"
-        },
-        {
-          "name": "band2",
-          "common_name": "green"
-        },
-        {
-          "name": "band3",
-          "common_name": "blue"
-        }
-      ],
-      "trainingdml-ai:amount_of_training_data": 1869,
-      "trainingdml-ai:image_size":"800*800~4000*4000",
-      "trainingdml-ai:data_sources": [
-        "gf-2",
-        "jinlin-1"
-      ],
-      "trainingdml-ai:quality": {
-        "type": "DataQuality",
-        "scope": {
-          "level": "dataset",
-          "levelDescription": {
-            "dataset": "DOTA-v1.5"
-          }
-        },
-        "report": [
-          {
-            "type": "FormatConsistency",
-            "measure": "Percentage of training samples with inconsistent image format",
-            "evaluationMethod": "Full test method to calculate the percentage of training samples with inconsistent format",
-            "result": "0"
-          },
-          {
-            "type": "CompletenessOmission",
-            "measure": "Percentage of missing scene labels",
-            "evaluationMethod": "Full test method to calculate the percentage of training samples with missing labels",
-            "result": "0"
-          },
-          {
-            "type": "ThematicClassificationCorrectness",
-            "measure": "Percentage of error scene labels",
-            "evaluationMethod": "Full test method to calculate the percentage of training samples with incorrect scene labels",
-            "result": "0"
-          }
-        ]
-  
-      },
-      "trainingdml-ai:changeset":[
-	  {
-		  "href": "http://oge.whu.edu.cn/dataset/dota_1.5_changeset.tdmljson",
-		  "rel": "version-history",
-		  "type": "application/json"
-	  }
-	  ]
-	}
-	 
+    },
     "links": [
-      {
-        "href": "collection.json",
-        "type": "application/json",
-        "rel": "self"
-      },
-      {
-        "href": "./DOTA_v1.5_trainingdata_0000.json",
-        "title": "DOTA_v1.5_trainingdata_0000",
-        "type": "application/json",
-        "rel": "item"
-      },
-      {
-        "href": "./DOTA_v1.5_trainingdata_1228.json",
-        "title": "DOTA_v1.5_trainingdata_1228",
-        "type": "application/json",
-        "rel": "item"
-      }
-
+        {
+            "href": "collection.json",
+            "type": "application/json",
+            "rel": "self"
+        },
+        {
+            "href": "./dota_v1.5_trainingdata_0000.json",
+            "title": "DOTA_v1.5_trainingdata_0000",
+            "type": "application/json",
+            "rel": "item"
+        },
+        {
+            "href": "./dota_v1.5_trainingdata_1228.json",
+            "title": "DOTA_v1.5_trainingdata_1228",
+            "type": "application/json",
+            "rel": "item"
+        }
     ]
-  }
-  
+}

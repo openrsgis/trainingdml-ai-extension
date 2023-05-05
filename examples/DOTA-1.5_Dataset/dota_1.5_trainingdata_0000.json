@@ -1,34 +1,37 @@
 {
     "stac_version": "1.0.0",
     "stac_extensions": [
-      "https://stac-extensions.github.io/trainingdml-ai/v1.0.0/schema.json",
-      "https://stac-extensions.github.io/ml-aoi/v1.0.1/schema.json"
+        "https://stac-extensions.github.io/trainingdml-ai/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/ml-aoi/v1.0.1/schema.json"
     ],
     "type": "Feature",
     "id": "whu_buildings_trainingdata_0000",
-    "bbox": [-180.0, -90.0, 180.0, 90.0],
+    "bbox": [
+        -180.0,
+        -90.0,
+        180.0,
+        90.0
+    ],
     "geometry": null,
     "properties": {
-      "datetime": "2019-01-01T00:00:00.000Z",
-      "ml-aoi:split": "train"
+        "datetime": "2019-01-01T00:00:00.000Z",
+        "ml-aoi:split": "train"
     },
     "links": [
-      {
-        "href": "DOTA_v1.5_trainingdata_0000.json",
-        "rel": "self"
-      },
-      {
-        "rel":"collection",
-        "href": "./collection.json"
-      }
+        {
+            "href": "dota_v1.5_trainingdata_0000.json",
+            "rel": "self"
+        },
+        {
+            "rel": "collection",
+            "href": "./collection.json"
+        }
     ],
     "assets": {
-      "data": {
-        "title": "dota_1.5_trainingdata_0000.tdmljson",
-        "type": "application/json",
-        "href": "http://oge.whu.edu.cn/dataset/dota-v1.5/dota_1.5_trainingdata_0000.tdmljson"
-      }
-
+        "data": {
+            "title": "dota_1.5_trainingdata_0000.tdmljson",
+            "type": "application/json",
+            "href": "http://oge.whu.edu.cn/dataset/dota-v1.5/dota_1.5_trainingdata_0000.tdmljson"
+        }
     }
-  }
-  
+}

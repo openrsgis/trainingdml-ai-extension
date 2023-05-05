@@ -112,7 +112,7 @@ This is the introduction for the purpose and the content of the Quality Object u
 | Field Name | Type                                                         | Description                                                  |
 | ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | scope      | [[Scope Object](https://github.com/TrainingDML/trainingdml-ai-extension#Scope-Object)] | **REQUIRED**. the scope of quality information is specified. |
-| report     | [[qualityElement Object](https://github.com/TrainingDML/trainingdml-ai-extension#QualityElement-Object)] | Quality reports about the training dataset.                  |
+| report     | [[QualityElement Object](https://github.com/TrainingDML/trainingdml-ai-extension#QualityElement-Object)] | Quality reports about the training dataset.                  |
 
 ### Scope Object
 

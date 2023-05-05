@@ -6,17 +6,22 @@
     "https://stac-extensions.github.io/label/v1.0.1/schema.json",
     "https://stac-extensions.github.io/eo/v1.1.0/schema.json"
   ],
-
   "type": "Collection",
   "id": "whu-building",
   "title": "WHU-Building Dataset-Building Change Detection Dataset",
   "description": "This dataset covers an area where a 6.3-magnitude earthquake has occurred in February 2011 and rebuilt in the following years. This dataset consists of aerial images obtained in April 2012 that contains 12796 buildings in 20.5 km2 (16077 buildings in the same area in 2016 dataset).",
   "license": "CC BY-SA 4.0",
-  "keywords":["rebuilt buildings", "aerial images"],
-  "providers":[
+  "keywords": [
+    "rebuilt buildings",
+    "aerial images"
+  ],
+  "providers": [
     {
       "name": "Wuhan University",
-      "roles": ["licensor", "producer"],
+      "roles": [
+        "licensor",
+        "producer"
+      ],
       "url": "http://gpcv.whu.edu.cn/data/"
     }
   ],
@@ -40,16 +45,16 @@
       ]
     }
   },
-  "properties":{
+  "properties": {
     "version": "1.0",
-    "label:tasks":"Change Detection",
-    "label:classes":[
+    "label:tasks": "Change Detection",
+    "label:classes": [
       {
-      "name": "building",
-      "classes": 1
+        "name": "building",
+        "classes": 1
       }
     ],
-    "eo:bands":[
+    "eo:bands": [
       {
         "name": "band1",
         "common_name": "red"
@@ -64,13 +69,12 @@
       }
     ],
     "trainingdml-ai:amount_of_training_data": 1,
-    "trainingdml-ai:image_size":"32508*15354",
+    "trainingdml-ai:image_size": "32508*15354",
     "trainingdml-ai:data_sources": [
       "quickbird",
       "wordlview series",
       "ikonos",
       "zy-3"
-
     ],
     "trainingdml-ai:quality": {
       "type": "DataQuality",
@@ -100,9 +104,7 @@
           "result": "0"
         }
       ]
-
     }
-
   },
   "summaries": {
     "datetime": {
@@ -114,8 +116,8 @@
     {
       "href": "./collection.json",
       "rel": "self",
-	  "type": "application/json",
-      "rel": "collection"
+      "type": "application/json",
+      "title": "collection"
     },
     {
       "href": "./item.json",
