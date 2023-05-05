@@ -45,10 +45,10 @@ The fields in the table below can be used in these parts of STAC documents:
 | -------------------- | ------------------------- | ----------- |
 | trainingdml-ai:amount_of_training_data | number              | **Required**, Total  number of training samples in the AI training dataset. |
 | trainingdml-ai:classification_schema | string | Classification schema for classes used in the AI  training dataset. |
-| trainingdml-ai:metrics_in_LIT       | [MetricsInLIT Object](https://github.com/TrainingDML/trainingdml-ai-extension/tree/main#metricsInLIT Object) | Results of performance metrics achieved by AI/ML algorithms in the peer-reviewed  literature. |
+| trainingdml-ai:metrics_in_LIT       | [MetricsInLIT Object](https://github.com/TrainingDML/trainingdml-ai-extension#metricsInLIT-Object) | Results of performance metrics achieved by AI/ML algorithms in the peer-reviewed  literature. |
 | trainingdml-ai:image_sizes         | [String]            | Size of the images used in the EO training dataset.          |
-| trainingdml-ai:scope | [Scope Object](https://github.com/TrainingDML/trainingdml-ai-extension/tree/main#Scope Object) | Description  of the scope of the training dataset. |
-| trainingdml-ai:quality              | [Quality Object](https://github.com/TrainingDML/trainingdml-ai-extension/tree/main#Quality Object) | Quality description of training datasets.                    |
+| trainingdml-ai:scope | [Scope Object](https://github.com/TrainingDML/trainingdml-ai-extension#Scope-Object) | Description  of the scope of the training dataset. |
+| trainingdml-ai:quality              | [Quality Object](https://github.com/TrainingDML/trainingdml-ai-extension#Quality-Object) | Quality description of training datasets.                    |
 | trainingdml-ai:data_sources         | [string]            | Citation of data sources.                                    |
 | trainingdml-ai:changeset            | [][Link Object][[Link Object](https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md#link-object)] | Changed  training samples between two versions in the collection level. |
 
@@ -111,8 +111,8 @@ This is the introduction for the purpose and the content of the Quality Object u
 
 | Field Name | Type                                                         | Description                                                  |
 | ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| scope      | [[Scope Object](https://github.com/TrainingDML/trainingdml-ai-extension/tree/main#Scope Object)] | **REQUIRED**. the scope of quality information is specified. |
-| report     | [[qualityElement Object](https://github.com/TrainingDML/trainingdml-ai-extension/tree/main#QualityElement Object)] | Quality reports about the training dataset.                  |
+| scope      | [[Scope Object](https://github.com/TrainingDML/trainingdml-ai-extension#Scope-Object)] | **REQUIRED**. the scope of quality information is specified. |
+| report     | [[qualityElement Object](https://github.com/TrainingDML/trainingdml-ai-extension#QualityElement-Object)] | Quality reports about the training dataset.                  |
 
 ### Scope Object
 
