@@ -25,9 +25,7 @@
               "allOf": [
                 {
                   "$comment": "Require fields here for Item Properties.",
-                  "required": [
-                    
-                  ]
+                  "required": []
                 },
                 {
                   "$ref": "#/definitions/fields"
@@ -72,9 +70,6 @@
               "required": [
                 "id",
                 "title",
-                "description",
-                "license",
-                "version",
                 "extent",
                 "properties",
                 "links"
@@ -167,84 +162,103 @@
     "require_any_field": {
       "$comment": "Please list all fields here so that we can force the existence of one of them in other parts of the schemas.",
       "anyOf": [
-        {"required": ["trainingdml-ai:amount_of_training_data"]}
+        {
+          "required": [
+            "trainingdml-ai:amount_of_training_data"
+          ]
+        }
       ]
     },
     "fields": {
       "$comment": "Add your new fields here. Don't require them here, do that above in the corresponding schema.",
       "type": "object",
       "properties": {
+        "tdml:amount_of_training_data": {
+          "type": "integer",
+          "default": 0,
+          "title": "The trainingdml-ai:amount_of_training_data Schema",
+          "examples": [
+            1
+          ]
+        },
+        "tdml:classification_schema": {
+          "type": "string",
+          "default": "",
+          "title": "The trainingdml-ai:classification_schema Schema"
+        },
+        "tdml:image_size": {
+          "type": "string",
+          "default": "",
+          "title": "The trainingdml-ai:image_size Schema"
+        },
+        "tdml:scope": {
+          "$ref": "#/definitions/scope"
+        },
+        "tdml:data_sources": {
+          "type": "array",
+          "default": [],
+          "title": "The trainingdml-ai:data_sources Schema",
+          "items": {}
+        },
+        "tdml:metrics_in_LIT": {
+          "type": "array",
+          "default": [],
+          "title": "The trainingdml-ai:metrics_in_LIT Schema",
+          "items": {
+            "$ref": "#/definitions/metricsInLiterature"
+          }
+        },
+        "tdml:quality": {
+          "type": "object",
+          "default": {},
+          "title": "The trainingdml-ai:quality Schema",
+          "required": [
+            "type",
+            "scope",
+            "report"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "default": ""
+            },
+            "scope": {
+              "$ref": "#/definitions/scope"
+            },
+            "report": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/qualityElement"
+              }
+            }
+          }
+        },
+        "tdml:changeset": {
+          "type": "array",
+          "items": {
+            "$ref": "https://github.com/radiantearth/stac-spec/blob/master/item-spec/json-schema/item.json#/definitions/link"
+          }
+        },
+        "tdml:provenance": {
+          "type": "object",
+          "required": [
+            "scope"
+          ],
+          "properties": {
+            "scope": {
+              "ref": "#/definitions/scope"
+            },
+            "labeling_method":{
+              "type":"string"
+            },
+            "labeling_tools":{
+              "type":"string"
+            },
+            "labeler_name":{
+              "type":"string"
+            }
+          }
 
-        "trainingdml-ai:amount_of_training_data": {
-            "type": "integer",
-            "default": 0,
-            "title": "The trainingdml-ai:amount_of_training_data Schema",
-            "examples": [
-                1
-            ]
-        },
-		"trainingdml-ai:classification_schema": {
-            "type": "string",
-            "default": "",
-            "title": "The trainingdml-ai:classification_schema Schema"
-        },
-		"trainingdml-ai:image_size": {
-            "type": "string",
-            "default": "",
-            "title": "The trainingdml-ai:image_size Schema"
-        },
-		"trainingdml-ai:scope": {
-            "$ref": "#/definitions/scope"
-        },
-		
-        "trainingdml-ai:data_sources": {
-            "type": "array",
-            "default": [],
-            "title": "The trainingdml-ai:data_sources Schema",
-            "items": {}
-        },
-        "trainingdml-ai:metrics_in_LIT": {
-            "type": "array",
-            "default": [],
-            "title": "The trainingdml-ai:metrics_in_LIT Schema",
-            "items": {
-              "$ref": "#/definitions/metricsInLiterature"
-            }
-        },
-        "trainingdml-ai:quality": {
-            "type": "object",
-            "default": {},
-            "title": "The trainingdml-ai:quality Schema",
-            "required": [
-                "type",
-                "scope",
-                "report"
-            ],
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "default": ""
-                    
-                },
-                "scope": {
-                    
-                    "$ref": "#/definitions/scope"
-                },
-                "report": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/definitions/qualityElement"
-                    }
-          
-      
-                   
-                }
-            }
-        },
-        "trainingdml-ai:changeset": {
-			"type": "array",
-			"items": {
-			  "$ref": "https://github.com/radiantearth/stac-spec/blob/master/item-spec/json-schema/item.json#/definitions/link"       
         },
         "metricsInLiterature": {
           "title": "MetricsInLiterature",
@@ -346,7 +360,7 @@
             }
           }
         }
-    },
+      },
       "patternProperties": {
         "^(?!template:)": {
           "$comment": "Above, change trainingdml-ai to the prefix of this extension"
@@ -354,9 +368,5 @@
       },
       "additionalProperties": false
     }
-    
-
-
-
   }
 }
