@@ -2,7 +2,7 @@
 
 - **Title:** TrainingDML-AI
 - **Identifier:** <https://stac-extensions.github.io/trainingdml-ai/v1.0.0/schema.json>
-- **Field Name Prefix:** trainingdml-ai
+- **Field Name Prefix:** tdml
 - **Scope:** Item, Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
 - **Owner**: @iwsql
@@ -21,8 +21,8 @@ This document explains the fields of The Training Data Markup Language for Artif
 
 - Examples:
   - Dota-v1.5 Dataset:
-    -  [Item example-Dota-v1.5 Dataset](examples/DOTA-1.5_Dataset/dota_1.5_trainingdata_0000.json): Shows the basic usage of the extension in a STAC Item
-    -  [Item example-Dota-v1.5 Dataset](examples/DOTA-1.5_Dataset/dota_1.5_trainingdata_1228.json): Shows the basic usage of the extension in a STAC Item
+    -  [Item 1 example-Dota-v1.5 Dataset](examples/DOTA-1.5_Dataset/dota_1.5_trainingdata_0000.json): Shows the basic usage of the extension in a STAC Item
+    -  [Item 2 example-Dota-v1.5 Dataset](examples/DOTA-1.5_Dataset/dota_1.5_trainingdata_1228.json): Shows the basic usage of the extension in a STAC Item
     -  [Collection example-Dota-v1.5 Dataset](examples/DOTA-1.5_Dataset/collection.json): Shows the basic usage of the extension in a STAC Collection
     
   - WHU building Dataset:
@@ -32,7 +32,7 @@ This document explains the fields of The Training Data Markup Language for Artif
 - [JSON Schema](json-schema/schema.json)
 - [Changelog](./CHANGELOG.md)
 
-## Fields
+## Collection Fields
 
 The fields in the table below can be used in these parts of STAC documents:
 - [ ] Catalogs
@@ -43,53 +43,78 @@ The fields in the table below can be used in these parts of STAC documents:
 
 | Field Name           | Type                      | Description |
 | -------------------- | ------------------------- | ----------- |
-| trainingdml-ai:amount_of_training_data | number              | **Required**, Total  number of training samples in the AI training dataset. |
-| trainingdml-ai:classification_schema | string | Classification schema for classes used in the AI  training dataset. |
-| trainingdml-ai:metrics_in_LIT       | [MetricsInLIT Object](https://github.com/TrainingDML/trainingdml-ai-extension#metricsInLIT-Object) | Results of performance metrics achieved by AI/ML algorithms in the peer-reviewed  literature. |
-| trainingdml-ai:image_sizes         | [String]            | Size of the images used in the EO training dataset.          |
-| trainingdml-ai:scope | [Scope Object](https://github.com/TrainingDML/trainingdml-ai-extension#Scope-Object) | Description  of the scope of the training dataset. |
-| trainingdml-ai:quality              | [Quality Object](https://github.com/TrainingDML/trainingdml-ai-extension#Quality-Object) | Quality description of training datasets.                    |
-| trainingdml-ai:data_sources         | [string]            | Citation of data sources.                                    |
-| trainingdml-ai:changeset            | [][Link Object][[Link Object](https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md#link-object)] | Changed  training samples between two versions in the collection level. |
+| tdml:amount_of_training_data | number              | **Required**, Total  number of training samples in the AI training dataset. |
+| tdml:classification_schema | string | Classification schema for classes used in the AI  training dataset. |
+| tdml:metrics_in_LIT  | [[MetricsInLIT Object](#metricsInLIT-Object)] | Results of performance metrics achieved by AI/ML algorithms in the peer-reviewed  literature. |
+| tdml:image_sizes      | [String]            | Size of the images used in the EO training dataset.          |
+| tdml:scope | [Scope Object](https://github.com/TrainingDML/trainingdml-ai-extension#Scope-Object) | Description  of the scope of the training dataset. |
+| tdml:quality           | [Quality Object](#Quality-Object) | Quality description of training datasets.                    |
+| tdml:provenance | [provenance Object](#Provenance Object) | Provenance information of the training data and training dataset. |
+| tdml:data_sources      | [string]            | Citation of data sources.                                    |
+| tdml:changeset         | \[[Link Object](https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md#link-object)] | Changed  training samples between two versions in the collection level. |
 
 In addition, fields from the following extensions must be imported in the item:
 
-- the [Label Extension Specification](https://github.com/stac-extensions/label) to describe label label of training data.
-- the [ML AOI Extension Specification](https://github.com/stac-extensions/ml-aoi) to describe training type of training data.
-- the [Scientific Citation Extension](https://github.com/stac-extensions/scientific) to describe doi of training dataset.
-- the [Electro-Optical Extension](https://github.com/stac-extensions/eo) to describe bands of training data.
+- the [Label Extension Specification](https://github.com/stac-extensions/label) to describe properties of a training dataset.
+- the [Scientific Citation Extension](https://github.com/stac-extensions/scientific) to describe DOI of a training dataset.
+- the [Electro-Optical Extension](https://github.com/stac-extensions/eo) to describe bands of a training dataset.
+
+## Item Fields
+
+The fields in the table below can be used in these parts of STAC documents:
+
+- [ ] Catalogs
+- [ ] Collections
+- [x] Item Properties (incl. Summaries in Collections)
+- [ ] Assets (for both Collections and Items, incl. Item Asset Definitions in Collections)
+- [ ] Links
+
+| Field Name        | Type                                                         | Description                                                  |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| tdml:quality      | [Quality Object](https://github.com/TrainingDML/trainingdml-ai-extension#Quality-Object) | Quality description of training datasets.                    |
+| tdml:provenance   | [Provenance Object](#Provenance Object)                      | Provenance information of the training data and training dataset. |
+| tdml:data_sources | [string]                                                     | Citation of data sources.                                    |
+
+In addition, fields from the following extensions must be imported in the item:
+
+- the [Label Extension Specification](https://github.com/stac-extensions/label) to describe label properties of a training instance.
+- the [ML AOI Extension Specification](https://github.com/stac-extensions/ml-aoi) to describe training type of a training instance.
 
 ### Additional Field Information
 
-#### trainingdml-ai:amount_of_training_data 
+#### tdml:amount_of_training_data 
 
 Total number of training samples in the AI training dataset.
 
-#### trainingdml-ai:classification_schema
+#### tdml:classification_schema
 
  Time when the AI training dataset was created. 
 
-####  trainingdml-ai:metrics_in_LIT 
+####  tdml:metrics_in_LIT 
 
 Results of performance metrics achieved by AI/ML algorithms in the peer-reviewed  literature.  
 
-#### trainingdml-ai:image_sizes
+#### tdml:image_sizes
 
 Size of the images used in the EO training dataset.  The imageSize  is recommended to be expressed in the form of "width\*height". If the imageSize of the training data in dataset is not the same, you can use the imageSize of Smallest size image and the imageSize of largest image to express, such as "minWidth\**minHeight~maxWidth*\*maxHeight".
 
-####  trainingdml-ai:scope
+####  tdml:scope
 
 Description  of the scope of the training dataset.  
 
-#### trainingdml-ai:quality  
+#### tdml:quality  
 
 Quality description of training datasets. Quality will be aligned with the DQ_DataQuality class in the ISO 19157:2013 spatial data quality model, and the quality assessment metrics for the sample dataset are described using the quality metric classes defined in ISO 19157:2013.
 
-#### trainingdml-ai:data_sources  
+#### tdml:provenance
+
+provenance includes the labeler and the labeling procedure, which can be mapped to the agent and activity respectively in [W3C PROV](https://www.w3.org/TR/prov-overview/) model. The labeler identifies the agent that creates the training dataset or individual samples, and the labeling procedure represents the process for data generation.
+
+#### tdml:data_sources  
 
 Citation of data sources.  
 
-#### trainingdml-ai:changeset
+#### tdml:changeset
 
 changed  training samples between two versions in the collection level. ChangeSet is used to locate updates to a specific version of a sample dataset by its identifier "datasetId" and version "version".
 
@@ -97,7 +122,7 @@ There are three types of updates for sample data units: "add" for adding new sam
 
 ### MetricsInLIT Object
 
-This is the introduction for the purpose and the content of the metricsInLIT Object used in field: trainingdml-ai:metricsInLIT.
+This is the introduction for the purpose and the content of the metricsInLIT Object used in field: tdml:metricsInLIT.
 
 | Field Name | Type                                          | Description                                                  |
 | ---------- | --------------------------------------------- | ------------------------------------------------------------ |
@@ -107,12 +132,23 @@ This is the introduction for the purpose and the content of the metricsInLIT Obj
 
 ### Quality Object
 
-This is the introduction for the purpose and the content of the Quality Object used in filed: trainingdml-ai:quality.
+This is the introduction for the purpose and the content of the Quality Object used in filed: tdml:quality.
 
-| Field Name | Type                                                         | Description                                                  |
-| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| scope      | [[Scope Object](https://github.com/TrainingDML/trainingdml-ai-extension#Scope-Object)] | **REQUIRED**. the scope of quality information is specified. |
-| report     | [[QualityElement Object](https://github.com/TrainingDML/trainingdml-ai-extension#QualityElement-Object)] | Quality reports about the training dataset.                  |
+| Field Name | Type                                               | Description                                                  |
+| ---------- | -------------------------------------------------- | ------------------------------------------------------------ |
+| scope      | \[[Scope Object](#Scope-Object)]                   | **REQUIRED**. the scope of quality information is specified. |
+| report     | \[[QualityElement Object](#QualityElement-Object)] | Quality reports about the training dataset.                  |
+
+### Provenance Object
+
+This is the introduction for the purpose and the content of the Provenance Object used in filed: tdml:provenance.
+
+| Field Name       | Type                             | Description                                                  |
+| ---------------- | -------------------------------- | ------------------------------------------------------------ |
+| scope            | \[[Scope Object](#Scope-Object)] | **REQUIRED**. the scope of labeling information is specified. |
+| labeling_methods | string                           | Methods used in the labeling procedure.                      |
+| labeling_tools   | string                           | Tools or software used in the labeling procedure.            |
+| labeler_name     | string                           | Name of the labeler.                                         |
 
 ### Scope Object
 

@@ -2,10 +2,11 @@
   "stac_version": "1.0.0",
   "stac_extensions": [
     "https://stac-extensions.github.io/trainingdml-ai/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/ml-aoi/v1.0.1/schema.json"
+    "https://stac-extensions.github.io/ml-aoi/v1.0.1/schema.json",
+    "https://stac-extensions.github.io/label/v1.0.1/schema.json"
   ],
   "type": "Feature",
-  "id": "whu_buildings_trainingdata_1228",
+  "id": "dota_v1.5_trainingdata_1228",
   "bbox": [
     -180.0,
     -90.0,
@@ -15,7 +16,21 @@
   "geometry": null,
   "properties": {
     "datetime": "2019-01-01T00:00:00.000Z",
-    "ml-aoi:split": "train"
+    "ml-aoi:split": "train",
+    "label:class": [
+      {
+        "name": "Ship",
+        "class": 5
+      },
+      {
+        "name": "Bridge",
+        "class": 14
+      },
+      {
+        "name": "container-crane",
+        "class": 16
+      }
+    ]
   },
   "links": [
     {
@@ -29,9 +44,9 @@
   ],
   "assets": {
     "data": {
-      "title": "dota_1.5_trainingdata_1228.tdmljson",
+      "title": "dota_v1.5_trainingdata_1228",
       "type": "application/json",
-      "href": "http://oge.whu.edu.cn/dataset/dota-v1.5/dota_1.5_trainingdata_1228.tdmljson"
+      "href": "http://oge.whu.edu.cn/dataset/DOTA-v1.5/dota_v1.5_trainingdata_1228_TDML.json"
     }
   }
 }

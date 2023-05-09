@@ -5,7 +5,7 @@
         "https://stac-extensions.github.io/ml-aoi/v1.0.1/schema.json"
     ],
     "type": "Feature",
-    "id": "whu_buildings_trainingdata_0000",
+    "id": "dota_v1.5_trainingdata_0000",
     "bbox": [
         -180.0,
         -90.0,
@@ -15,7 +15,22 @@
     "geometry": null,
     "properties": {
         "datetime": "2019-01-01T00:00:00.000Z",
-        "ml-aoi:split": "train"
+        "ml-aoi:split": "train",
+        "label:class":[
+            {
+              "name": "Small Vehicle",
+              "class": 1
+            },
+            {
+              "name": "Large Vehicle",
+              "class": 2
+            },
+            {
+              "name": "Plane",
+              "class": 3
+            }
+          ]
+
     },
     "links": [
         {
@@ -29,9 +44,9 @@
     ],
     "assets": {
         "data": {
-            "title": "dota_1.5_trainingdata_0000.tdmljson",
+            "title": "dota_v1.5_trainingdata_0000.json",
             "type": "application/json",
-            "href": "http://oge.whu.edu.cn/dataset/dota-v1.5/dota_1.5_trainingdata_0000.tdmljson"
+            "href": "http://oge.whu.edu.cn/dataset/DOTA-v1.5/dota_v1.5_trainingdata_0000_TDML.json"
         }
     }
 }

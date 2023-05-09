@@ -68,15 +68,15 @@
         "common_name": "blue"
       }
     ],
-    "trainingdml-ai:amount_of_training_data": 1,
-    "trainingdml-ai:image_size": "32508*15354",
-    "trainingdml-ai:data_sources": [
+    "tdml:amount_of_training_data": 1,
+    "tdml:image_size": "32508*15354",
+    "tdml:data_sources": [
       "quickbird",
       "wordlview series",
       "ikonos",
       "zy-3"
     ],
-    "trainingdml-ai:quality": {
+    "tdml:quality": {
       "type": "DataQuality",
       "scope": {
         "level": "dataset",

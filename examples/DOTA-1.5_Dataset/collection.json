@@ -197,13 +197,13 @@
                 "common_name": "blue"
             }
         ],
-        "trainingdml-ai:amount_of_training_data": 1869,
-        "trainingdml-ai:image_size": "800*800~4000*4000",
-        "trainingdml-ai:data_sources": [
+        "tdml:amount_of_training_data": 1869,
+        "tdml:image_size": "800*800~4000*4000",
+        "tdml:data_sources": [
             "gf-2",
             "jinlin-1"
         ],
-        "trainingdml-ai:quality": {
+        "tdml:quality": {
             "type": "DataQuality",
             "scope": {
                 "level": "dataset",
@@ -232,9 +232,9 @@
                 }
             ]
         },
-        "trainingdml-ai:changeset": [
+        "tdml:changeset": [
             {
-                "href": "http://oge.whu.edu.cn/dataset/dota_1.5_changeset.tdmljson",
+                "href": "http://oge.whu.edu.cn/dataset/DOTA-v1.5/dota_v1.5_changeset_TDML.json",
                 "rel": "version-history",
                 "type": "application/json"
             }
@@ -248,13 +248,13 @@
         },
         {
             "href": "./dota_v1.5_trainingdata_0000.json",
-            "title": "DOTA_v1.5_trainingdata_0000",
+            "title": "dota_v1.5_trainingdata_0000",
             "type": "application/json",
             "rel": "item"
         },
         {
             "href": "./dota_v1.5_trainingdata_1228.json",
-            "title": "DOTA_v1.5_trainingdata_1228",
+            "title": "dota_v1.5_trainingdata_1228",
             "type": "application/json",
             "rel": "item"
         }
