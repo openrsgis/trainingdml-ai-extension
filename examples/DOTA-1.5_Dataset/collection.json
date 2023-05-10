@@ -47,7 +47,7 @@
     },
     "properties": {
         "version": "1.5",
-        "created_time": "2011-02-01T00:00:00Z",
+        "sci:doi": "10.1109/TPAMI.2021.3117983",
         "label:tasks": "Object Detection",
         "label:classes": [
             {
@@ -197,6 +197,24 @@
                 "common_name": "blue"
             }
         ],
+        "tdml:scope": {
+            "level": "dataset",
+            "levelDescription": {
+                "dataset": "DOTA_v1.5"
+            }
+        },
+        "tdml:classification_schema": "luojiaSET classification schema",
+        "tdml:provenance": {
+            "labeling_tools": "ArcGIS 10.1",
+            "labeling_methods": "manual",
+            "labeler_name": "demo_name",
+            "scope": {
+                "level": "dataset",
+                "levelDescription": {
+                    "dataset": "DOTA_v1.5"
+                }
+            }
+        },
         "tdml:amount_of_training_data": 1869,
         "tdml:image_size": "800*800~4000*4000",
         "tdml:data_sources": [
