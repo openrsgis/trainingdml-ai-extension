@@ -49,7 +49,7 @@ The fields in the table below can be used in these parts of STAC documents:
 | tdml:image_sizes      | [String]            | Size of the images used in the EO training dataset.          |
 | tdml:scope | [Scope Object](https://github.com/TrainingDML/trainingdml-ai-extension#Scope-Object) | Description  of the scope of the training dataset. |
 | tdml:quality           | [Quality Object](#Quality-Object) | Quality description of training datasets.                    |
-| tdml:provenance | [provenance Object](#Provenance Object) | Provenance information of the training data and training dataset. |
+| tdml:provenance | [provenance Object](#Provenance-Object) | Provenance information of the training data and training dataset. |
 | tdml:data_sources      | [string]            | Citation of data sources.                                    |
 | tdml:changeset         | \[[Link Object](https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md#link-object)] | Changed  training samples between two versions in the collection level. |
 
@@ -72,7 +72,7 @@ The fields in the table below can be used in these parts of STAC documents:
 | Field Name        | Type                                                         | Description                                                  |
 | ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | tdml:quality      | [Quality Object](https://github.com/TrainingDML/trainingdml-ai-extension#Quality-Object) | Quality description of training datasets.                    |
-| tdml:provenance   | [Provenance Object](#Provenance Object)                      | Provenance information of the training data and training dataset. |
+| tdml:provenance   | [Provenance Object](#Provenance-Object)                      | Provenance information of the training data and training dataset. |
 | tdml:data_sources | [string]                                                     | Citation of data sources.                                    |
 
 In addition, fields from the following extensions must be imported in the item:
