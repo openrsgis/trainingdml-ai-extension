@@ -124,11 +124,42 @@ There are three types of updates for sample data units: "add" for adding new sam
 
 This is the introduction for the purpose and the content of the metricsInLIT Object used in field: tdml:metricsInLIT.
 
-| Field Name | Type                                          | Description                                                  |
-| ---------- | --------------------------------------------- | ------------------------------------------------------------ |
-| doi        | string                                        | **REQUIRED**. Digital object identifier of the peer-reviewed literature. |
-| algorithm  | string                                        | AI/ML algorithms used in the peer-reviewed literature.       |
-| metrics    | [Map<string,  string\|number\|Boolean\|null>] | **REQUIRED**. Metrics and results of AI/ML algorithms in the peer-reviewed literature. |
+| Field Name | Type   | Description                                                  |
+| ---------- | ------ | ------------------------------------------------------------ |
+| doi        | string | **REQUIRED**. Digital object identifier of the peer-reviewed literature. |
+| algorithm  | string | AI/ML algorithms used in the peer-reviewed literature.       |
+| metrics    | object | **REQUIRED**. Metrics and results of AI/ML algorithms in the peer-reviewed literature. |
+
+An example of yolov5's MetricsInLIT on the DOTA-v1.5 dataset:
+
+```json
+{
+    "doi":"10.5281/zenodo.3983579",
+    "algotithm": "YOLOV5",
+    "metrics":[
+        {
+            "name": "AP50",
+            "value": "66.1"
+        },
+        {
+            "name": "AP50:95",
+            "value": "41.5"
+        },
+        {
+            "name": "AR1",
+            "value": "39.4"
+        },
+        {
+            "name": "AR10",
+            "value": "54.9"
+        },
+        {
+            "name": "AR100",
+            "value": "58.4"
+        }
+	]
+}
+```
 
 ### Quality Object
 
@@ -146,9 +177,9 @@ This is the introduction for the purpose and the content of the Provenance Objec
 | Field Name       | Type                             | Description                                                  |
 | ---------------- | -------------------------------- | ------------------------------------------------------------ |
 | scope            | \[[Scope Object](#Scope-Object)] | **REQUIRED**. the scope of labeling information is specified. |
-| labeling_methods | string                           | Methods used in the labeling procedure.                      |
-| labeling_tools   | string                           | Tools or software used in the labeling procedure.            |
-| labeler_name     | string                           | Name of the labeler.                                         |
+| labeling_methods | [string]                         | Methods used in the labeling procedure.                      |
+| labeling_tools   | [string]                         | Tools or software used in the labeling procedure.            |
+| labeler_names    | [string]                         | Name of the labeler.                                         |
 
 ### Scope Object
 

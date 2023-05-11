@@ -248,14 +248,23 @@
             "scope": {
               "ref": "#/definitions/scope"
             },
-            "labeling_method":{
-              "type":"string"
+            "labeling_methods":{
+              "type":"array",
+			  "items": {
+                "type": "string",
+			  }
             },
             "labeling_tools":{
-              "type":"string"
+              "type":"array",
+			  "items": {
+                "type": "string",
+			  }
             },
             "labeler_name":{
-              "type":"string"
+              "type":"array",
+			  "items": {
+                "type": "string",
+			  }
             }
           }
 

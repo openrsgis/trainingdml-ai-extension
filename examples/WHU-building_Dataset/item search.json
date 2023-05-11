@@ -1,0 +1,84 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "stac_version": "1.0.0",
+        "stac_extensions": [
+          "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+          "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+          "https://example.com/cs-extension/1.0/schema.json"
+        ],
+        "type": "Feature",
+        "id": "DOTA-v1.5 Dataset",
+        "bbox": [
+            -110,
+            39.5,
+            -105,
+            40.5
+        ],
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -122.308150179,
+                37.488035566
+              ],
+              [
+                -122.597502109,
+                37.538869539
+              ],
+              [
+                -122.576687533,
+                37.613537207
+              ],
+              [
+                -122.2880486,
+                37.562818007
+              ],
+              [
+                -122.308150179,
+                37.488035566
+              ]
+            ]
+          ]
+        },
+        "properties": {
+            
+            "ml-aoi:split": "train",
+            "label:classes": [
+                {
+                    "name": "Small Vehicle",
+                    "classes": 1
+                }
+            ]
+        },
+        "links": [
+            {
+                "href": "item.json",
+                "rel": "self"
+            },
+            {
+                "rel": "collection",
+                "href": "./collection.json"
+            }
+        ],
+        "assets": {
+            "data": {
+                "title": "whu_building_img_trainingData_TDML",
+                "type": "application/json",
+                "href": "http://oge.whu.edu.cn/dataset/whu-building/whu_building_img_trainingData_TDML.json"
+            }
+        }
+      }
+    ],
+    "links": [
+      {
+        "rel": "next",
+        "type": "application/geo+json",
+        "href": "http://api.cool-sat.com/search?next=ANsXtp9mrqN0yrKWhf-y2PUpHRLQb1GT-mtxNcXou8TwkXhi1Jbk"
+      }
+    ],
+    "numberMatched": 0,
+    "numberReturned": 0
+  }

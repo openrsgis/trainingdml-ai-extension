@@ -203,6 +203,32 @@
                 "dataset": "DOTA_v1.5"
             }
         },
+		"tdml:metrics_in_LIT": {
+			"doi":"10.5281/zenodo.3983579",
+			"algotithm": "YOLOV5",
+			"metrics":[
+				{
+					"metrics": "AP50",
+					"value": "66.1"
+				},
+				{
+					"metrics": "AP50:95",
+					"value": "41.5"
+				},
+				{
+					"metrics": "AR1",
+					"value": "39.4"
+				},
+				{
+					"metrics": "AR10",
+					"value": "54.9"
+				},
+				{
+					"metrics": "AR100",
+					"value": "58.4"
+				}
+			]
+}
         "tdml:classification_schema": "luojiaSET classification schema",
         "tdml:provenance": {
             "labeling_tools": "ArcGIS 10.1",

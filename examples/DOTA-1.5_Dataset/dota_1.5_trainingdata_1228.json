@@ -30,7 +30,8 @@
         "name": "container-crane",
         "class": 16
       }
-    ]
+    ],
+    "label:tasks": "Object Detection"
   },
   "links": [
     {

@@ -29,7 +29,8 @@
               "name": "Plane",
               "class": 3
             }
-          ]
+          ],
+          "label:tasks": "Object Detection"
 
     },
     "links": [
