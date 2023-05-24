@@ -5,7 +5,7 @@
 - **Field Name Prefix:** tdml
 - **Scope:** Item, Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
-- **Owner**: @iwsql
+- **Owner**: @TrainingDML
 
 This document explains the fields of The Training Data Markup Language for Artificial Intelligence (TrainingDML-AI)  Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification. Training data plays a fundamental role in Earth Observation (EO) Artificial Intelligence Machine Learning (AI/ML), especially Deep Learning (DL). The TrainingDML-AI Extension provides detailed metadata for formalizing the information model of geospatial machine learning training data. This includes but is not limited to the following aspects: 
 
@@ -46,12 +46,11 @@ The fields in the table below can be used in these parts of STAC documents:
 | tdml:amount_of_training_data | number              | **Required**, Total  number of training samples in the AI training dataset. |
 | tdml:classification_schema | string | Classification schema for classes used in the AI  training dataset. |
 | tdml:metrics_in_LIT  | [[MetricsInLIT Object](#metricsInLIT-Object)] | Results of performance metrics achieved by AI/ML algorithms in the peer-reviewed  literature. |
-| tdml:image_sizes      | [String]            | Size of the images used in the EO training dataset.          |
+| tdml:image_sizes      | [number]      | Size of the images used in the EO training dataset.          |
 | tdml:scope | [Scope Object](https://github.com/TrainingDML/trainingdml-ai-extension#Scope-Object) | Description  of the scope of the training dataset. |
 | tdml:quality           | [Quality Object](#Quality-Object) | Quality description of training datasets.                    |
 | tdml:provenance | [provenance Object](#Provenance-Object) | Provenance information of the training data and training dataset. |
 | tdml:data_sources      | [string]            | Citation of data sources.                                    |
-| tdml:changeset         | \[[Link Object](https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md#link-object)] | Changed  training samples between two versions in the collection level. |
 
 In addition, fields from the following extensions must be imported in the item:
 
@@ -114,11 +113,7 @@ provenance includes the labeler and the labeling procedure, which can be mapped 
 
 Citation of data sources.  
 
-#### tdml:changeset
 
-changed  training samples between two versions in the collection level. ChangeSet is used to locate updates to a specific version of a sample dataset by its identifier "datasetId" and version "version".
-
-There are three types of updates for sample data units: "add" for adding new sample data units, "modify" for modifying existing sample data units, and "delete" for removing sample data units. "Modify" includes changes to metadata of sample data, changes to original data used in sample data, and additions, modifications, and deletions of all labeled objects in the sample data.
 
 ### MetricsInLIT Object
 
@@ -198,6 +193,12 @@ This is the introduction for the purpose and the content of the qualityElement. 
 | measure           | string | **REQUIRED**. Reference to measure used.              |
 | evaluation_method | string | **REQUIRED**. Evaluation information.                 |
 | result            | string | Value obtained from applying a data quality measure.. |
+
+## Relation types
+
+It is highly recommended to use the `version-history` as a rel type in the  [Link Object](https://github.com/radiantearth/stac-spec/tree/master/item-spec/item-spec.md#link-object) to record the changed training samples between two versions at the collection level as a changeset. The changeset is used to track updates made to a specific version of a sample dataset, identified by its "datasetId" and "version".
+
+There are three types of updates for sample data units: "add" for adding new sample data units, "modify" for modifying existing sample data units, and "delete" for removing sample data units. "Modify" includes changes to metadata of sample data, changes to original data used in sample data, and additions, modifications, and deletions of all labeled objects in the sample data.
 
 ## Best Practices
 

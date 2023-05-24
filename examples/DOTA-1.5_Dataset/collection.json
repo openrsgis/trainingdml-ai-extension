@@ -203,50 +203,41 @@
                 "dataset": "DOTA_v1.5"
             }
         },
+        "tdml:classification_schema": "luojiaSET classification schema",
+		"tdml:amount_of_training_data": 1869,
+		"tdml:data_sources": [
+            "gf-2",
+            "jinlin-1"
+        ],
+        
+        
+        "tdml:image_size": [[800, 800], [4000,4000],
 		"tdml:metrics_in_LIT": {
 			"doi":"10.5281/zenodo.3983579",
 			"algotithm": "YOLOV5",
 			"metrics":[
 				{
-					"metrics": "AP50",
+					"name": "AP50",
 					"value": "66.1"
 				},
 				{
-					"metrics": "AP50:95",
+					"name": "AP50:95",
 					"value": "41.5"
 				},
 				{
-					"metrics": "AR1",
+					"name": "AR1",
 					"value": "39.4"
 				},
 				{
-					"metrics": "AR10",
+					"name": "AR10",
 					"value": "54.9"
 				},
 				{
-					"metrics": "AR100",
+					"name": "AR100",
 					"value": "58.4"
 				}
 			]
-}
-        "tdml:classification_schema": "luojiaSET classification schema",
-        "tdml:provenance": {
-            "labeling_tools": "ArcGIS 10.1",
-            "labeling_methods": "manual",
-            "labeler_name": "demo_name",
-            "scope": {
-                "level": "dataset",
-                "levelDescription": {
-                    "dataset": "DOTA_v1.5"
-                }
-            }
-        },
-        "tdml:amount_of_training_data": 1869,
-        "tdml:image_size": "800*800~4000*4000",
-        "tdml:data_sources": [
-            "gf-2",
-            "jinlin-1"
-        ],
+		},
         "tdml:quality": {
             "type": "DataQuality",
             "scope": {
@@ -276,13 +267,17 @@
                 }
             ]
         },
-        "tdml:changeset": [
-            {
-                "href": "http://oge.whu.edu.cn/dataset/DOTA-v1.5/dota_v1.5_changeset_TDML.json",
-                "rel": "version-history",
-                "type": "application/json"
+		"tdml:provenance": {
+            "labeling_tools": "ArcGIS 10.1",
+            "labeling_methods": "manual",
+            "labeler_name": "demo_name",
+            "scope": {
+                "level": "dataset",
+                "levelDescription": {
+                    "dataset": "DOTA_v1.5"
+                }
             }
-        ]
+        }
     },
     "links": [
         {
@@ -301,6 +296,12 @@
             "title": "dota_v1.5_trainingdata_1228",
             "type": "application/json",
             "rel": "item"
-        }
+        },
+		{
+			 "href": "http://oge.whu.edu.cn/dataset/DOTA-v1.5/dota_v1.5_changeset_TDML.json",
+             "rel": "version-history",
+			 "title": "changeset"
+             "type": "application/json"
+		}
     ]
 }
