@@ -47,7 +47,7 @@ The fields in the table below can be used in these parts of STAC documents:
 | tdml:classification_schema | string | Classification schema for classes used in the AI  training dataset. |
 | tdml:metrics_in_LIT  | [[MetricsInLIT Object](#metricsInLIT-Object)] | Results of performance metrics achieved by AI/ML algorithms in the peer-reviewed  literature. |
 | tdml:image_sizes      | [number]      | Size of the images used in the EO training dataset.          |
-| tdml:scope | [Scope Object](https://github.com/TrainingDML/trainingdml-ai-extension#Scope-Object) | Description  of the scope of the training dataset. |
+| tdml:scope | [Scope Object](https://github.com/openrsgis/trainingdml-ai-extension#Scope-Object) | Description  of the scope of the training dataset. |
 | tdml:quality           | [Quality Object](#Quality-Object) | Quality description of training datasets.                    |
 | tdml:provenance | [provenance Object](#Provenance-Object) | Provenance information of the training data and training dataset. |
 | tdml:data_sources      | [string]            | Citation of data sources.                                    |
@@ -70,7 +70,7 @@ The fields in the table below can be used in these parts of STAC documents:
 
 | Field Name        | Type                                                         | Description                                                  |
 | ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| tdml:quality      | [Quality Object](https://github.com/TrainingDML/trainingdml-ai-extension#Quality-Object) | Quality description of training datasets.                    |
+| tdml:quality      | [Quality Object](https://github.com/openrsgis/trainingdml-ai-extension#Quality-Object) | Quality description of training datasets.                    |
 | tdml:provenance   | [Provenance Object](#Provenance-Object)                      | Provenance information of the training data and training dataset. |
 | tdml:data_sources | [string]                                                     | Citation of data sources.                                    |
 
